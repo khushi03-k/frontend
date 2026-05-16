@@ -45,7 +45,7 @@ function Tenants() {
 
   const fetchTenants = useCallback(async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/auth/tenants", { headers: { "Authorization": `Bearer ${user.token}` } });
+      const res = await fetch("https://backend-1-vxvg.onrender.com/api/auth/tenants", { headers: { "Authorization": `Bearer ${user.token}` } });
       setTenants(await res.json());
     } catch(e){ console.error(e); }
   }, [user.token]);
@@ -60,7 +60,7 @@ function Tenants() {
         else if(k!=="logoPreview"&&k!=="companyLogo") fd.append(k,form[k]);
       });
       const res = await fetch(
-        editId ? `http://localhost:5000/api/auth/tenants/${editId}` : "http://localhost:5000/api/auth/register-tenant",
+        editId ? `https://backend-1-vxvg.onrender.com/api/auth/tenants/${editId}` : "https://backend-1-vxvg.onrender.com/api/auth/register-tenant",
         { method:editId?"PUT":"POST", headers:{"Authorization":`Bearer ${user.token}`}, body:fd }
       );
       if(res.ok) {
@@ -83,7 +83,7 @@ function Tenants() {
   const toggleStatus = async (id, cur) => {
     const next = cur==="Active"?"Inactive":"Active";
     try {
-      await fetch(`http://localhost:5000/api/auth/tenants/${id}`, {
+      await fetch(`https://backend-1-vxvg.onrender.com/api/auth/tenants/${id}`, {
         method:"PUT", headers:{"Content-Type":"application/json","Authorization":`Bearer ${user.token}`},
         body:JSON.stringify({status:next})
       });

@@ -21,7 +21,7 @@ export default function useRecentClients(limit = 5) {
       [id]: value,
     }));
 
-    await fetch("https://backend-tlar.onrender.com/api/clients/" + id, {
+    await fetch("https://backend-1-vxvg.onrender.com/api/clients/" + id, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -34,7 +34,7 @@ export default function useRecentClients(limit = 5) {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch("https://backend-tlar.onrender.com/api/clients");
+      const res = await fetch("https://backend-1-vxvg.onrender.com/api/clients");
 
       const data = await res.json();
 

@@ -42,7 +42,7 @@ function VendorHome() {
   const [searchQuery, setSearchQuery] = useState("");
 
   const fetchCategories = () => {
-    fetch("https://backend-tlar.onrender.com/api/vendor-categories")
+    fetch("https://backend-1-vxvg.onrender.com/api/vendor-categories")
       .then((res) => res.json())
       .then((data) => setCategories(data));
   };
@@ -82,8 +82,8 @@ const handleSave = async () => {
   }
 
   const url = editId
-    ? `https://backend-tlar.onrender.com/api/vendor-categories/${editId}`
-    : "https://backend-tlar.onrender.com/api/vendor-categories";
+    ? `https://backend-1-vxvg.onrender.com/api/vendor-categories/${editId}`
+    : "https://backend-1-vxvg.onrender.com/api/vendor-categories";
 
   const method = editId ? "PUT" : "POST";
 
@@ -118,7 +118,7 @@ const handleSave = async () => {
 
     if (!result.isConfirmed) return;
 
-    const res = await fetch(`https://backend-tlar.onrender.com/api/vendor-categories/${id}`, {
+    const res = await fetch(`https://backend-1-vxvg.onrender.com/api/vendor-categories/${id}`, {
       method: "DELETE",
     });
 

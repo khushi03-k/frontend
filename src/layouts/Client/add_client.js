@@ -64,7 +64,7 @@ function AddClient() {
       }
 
       // CHECK UNIQUE NAME
-      const resExisting = await fetch("https://backend-tlar.onrender.com/api/clients");
+      const resExisting = await fetch("https://backend-1-vxvg.onrender.com/api/clients");
       const existingClients = await resExisting.json();
 
       const isDuplicate = existingClients.some(c =>
@@ -78,7 +78,7 @@ function AddClient() {
 
       if (form._id) {
         // Update client
-        await fetch(`https://backend-tlar.onrender.com/api/clients/${form._id}`, {
+        await fetch(`https://backend-1-vxvg.onrender.com/api/clients/${form._id}`, {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(form),
@@ -86,7 +86,7 @@ function AddClient() {
         Swal.fire("Success", "Client Updated", "success").then(() => navigate("/tables"));
       } else {
         // Add new client
-        await fetch("https://backend-tlar.onrender.com/api/clients", {
+        await fetch("https://backend-1-vxvg.onrender.com/api/clients", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(form),

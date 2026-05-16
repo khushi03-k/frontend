@@ -1,4 +1,4 @@
-const BASE_URL = "https://backend-tlar.onrender.com/api/vendors";
+const BASE_URL = "https://backend-1-vxvg.onrender.com/api/vendors";
 
 export const fetchVendors = async () => {
   const res = await fetch(BASE_URL);

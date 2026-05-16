@@ -68,17 +68,17 @@ function AddVendor() {
   const [allVendors, setAllVendors] = useState([]);
 
   useEffect(() => {
-    fetch("https://backend-tlar.onrender.com/api/vendor-categories")
+    fetch("https://backend-1-vxvg.onrender.com/api/vendor-categories")
       .then((res) => res.json())
       .then((data) => setCategories(data.data || data))
       .catch((err) => console.log(err));
 
-    fetch("https://backend-tlar.onrender.com/api/clients")
+    fetch("https://backend-1-vxvg.onrender.com/api/clients")
       .then((res) => res.json())
       .then((data) => setClients(data))
       .catch((err) => console.log(err));
 
-    fetch("https://backend-tlar.onrender.com/api/vendors")
+    fetch("https://backend-1-vxvg.onrender.com/api/vendors")
       .then((res) => res.json())
       .then((data) => setAllVendors(data.data || data))
       .catch((err) => console.log(err));
@@ -167,7 +167,7 @@ function AddVendor() {
 
     try {
       await fetch(
-        "https://backend-tlar.onrender.com/api/vendors",
+        "https://backend-1-vxvg.onrender.com/api/vendors",
         {
           method: "POST",
           body: formData,

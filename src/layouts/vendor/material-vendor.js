@@ -45,7 +45,7 @@ function VendorList() {
 
   const fetchVendors = useCallback(() => {
     if (!cleanCategory) return;
-    fetch(`https://backend-tlar.onrender.com/api/vendors?category=${cleanCategory}`)
+    fetch(`https://backend-1-vxvg.onrender.com/api/vendors?category=${cleanCategory}`)
       .then((res) => res.json())
       .then((res) => setVendors(res.data || []))
       .catch((err) => console.log(err));
@@ -75,7 +75,7 @@ function VendorList() {
     if (!result.isConfirmed) return;
 
     try {
-      const res = await fetch(`https://backend-tlar.onrender.com/api/vendors/${id}`, {
+      const res = await fetch(`https://backend-1-vxvg.onrender.com/api/vendors/${id}`, {
         method: "DELETE",
       });
       if (res.ok) {

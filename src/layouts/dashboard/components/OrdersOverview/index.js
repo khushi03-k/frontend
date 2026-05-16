@@ -20,7 +20,7 @@ function ProjectsOverview() {
 
   useEffect(() => {
     const loadProjects = async () => {
-      const res = await fetch("https://backend-tlar.onrender.com/api/projects");
+      const res = await fetch("https://backend-1-vxvg.onrender.com/api/projects");
 
       const data = await res.json();
 

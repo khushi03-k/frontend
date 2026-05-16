@@ -60,7 +60,7 @@ function VendorDetail() {
   const [whatsappMessage, setWhatsappMessage] = useState("");
 
   const fetchVendor = useCallback(() => {
-    fetch(`https://backend-tlar.onrender.com/api/vendors/${id}`)
+    fetch(`https://backend-1-vxvg.onrender.com/api/vendors/${id}`)
       .then((res) => res.json())
       .then((res) => { setVendor(res.data); setPreview(res.data.image || ""); })
       .catch((err) => console.error(err));
@@ -68,8 +68,8 @@ function VendorDetail() {
 
   useEffect(() => {
     fetchVendor();
-    fetch("https://backend-tlar.onrender.com/api/clients").then(res => res.json()).then(data => setClients(data));
-    fetch("https://backend-tlar.onrender.com/api/vendors").then(res => res.json()).then(data => setAllVendors(data.data || data));
+    fetch("https://backend-1-vxvg.onrender.com/api/clients").then(res => res.json()).then(data => setClients(data));
+    fetch("https://backend-1-vxvg.onrender.com/api/vendors").then(res => res.json()).then(data => setAllVendors(data.data || data));
   }, [fetchVendor]);
 
   const convertToBase64 = (file) => new Promise((resolve, reject) => {
@@ -81,7 +81,7 @@ function VendorDetail() {
   const handleProfileUpdate = async () => {
     let finalImage = vendor.image;
     if (image) finalImage = await convertToBase64(image);
-    await fetch(`https://backend-tlar.onrender.com/api/vendors/${id}`, {
+    await fetch(`https://backend-1-vxvg.onrender.com/api/vendors/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ ...vendor, image: finalImage, materials: JSON.stringify(vendor.materials) }),
@@ -122,7 +122,7 @@ function VendorDetail() {
   // Save entire materials array (all changes at once)
   const saveRow = async (index) => {
     setSavingRow(index);
-    await fetch(`https://backend-tlar.onrender.com/api/vendors/${id}`, {
+    await fetch(`https://backend-1-vxvg.onrender.com/api/vendors/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ ...vendor, materials: JSON.stringify(vendor.materials) }),
@@ -147,7 +147,7 @@ function VendorDetail() {
     if (!result.isConfirmed) return;
 
     const updated = vendor.materials.filter((_, i) => i !== index);
-    await fetch(`https://backend-tlar.onrender.com/api/vendors/${id}`, {
+    await fetch(`https://backend-1-vxvg.onrender.com/api/vendors/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ ...vendor, materials: JSON.stringify(updated) }),
@@ -296,7 +296,7 @@ function VendorDetail() {
                         confirmButtonText: "Yes, delete!"
                       });
                       if (result.isConfirmed) {
-                        await fetch(`https://backend-tlar.onrender.com/api/vendors/${id}`, { method: "DELETE" });
+                        await fetch(`https://backend-1-vxvg.onrender.com/api/vendors/${id}`, { method: "DELETE" });
                         Swal.fire("Deleted!", "Vendor has been deleted.", "success").then(() => navigate("/vendor"));
                       }
                     }}
