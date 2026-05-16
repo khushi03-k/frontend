@@ -6,7 +6,7 @@ import Chip from "@mui/material/Chip";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
-const Base_API = "http://localhost:5000/api";
+const Base_API = "https://backend-tlar.onrender.com/api";
 
 function useVendorTableData() {
   const [rows, setRows] = useState([]);

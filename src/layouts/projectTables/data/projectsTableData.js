@@ -62,7 +62,7 @@ export default function useProjectData() {
   const handleStatusChange = useCallback(async (id, value) => {
     setProjects((prev) => prev.map((p) => (p._id === id ? { ...p, status: value } : p)));
 
-    await fetch(`http://localhost:5000/api/projects/${id}`, {
+    await fetch(`https://backend-tlar.onrender.com/api/projects/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ status: value }),
@@ -71,7 +71,7 @@ export default function useProjectData() {
 
   // Load projects from backend
   const loadData = useCallback(async () => {
-    const res = await fetch("http://localhost:5000/api/projects");
+    const res = await fetch("https://backend-tlar.onrender.com/api/projects");
     const data = await res.json();
     if (Array.isArray(data)) {
       setProjects(data);
@@ -83,7 +83,7 @@ export default function useProjectData() {
 
   // Delete project
   const deleteProject = useCallback(async (id) => {
-    await fetch(`http://localhost:5000/api/projects/${id}`, {
+    await fetch(`https://backend-tlar.onrender.com/api/projects/${id}`, {
       method: "DELETE",
     });
     loadData();

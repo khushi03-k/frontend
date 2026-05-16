@@ -32,7 +32,7 @@ import ZoomInIcon from "@mui/icons-material/ZoomIn";
 import ZoomOutIcon from "@mui/icons-material/ZoomOut";
 import DownloadIcon from "@mui/icons-material/Download";
 
-const Base_API = "http://localhost:5000/api";
+const Base_API = "https://backend-tlar.onrender.com/api";
 
 function ProjectDetails() {
   const { state } = useLocation();

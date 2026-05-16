@@ -44,7 +44,7 @@ function AddProject() {
 
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/clients")
+    fetch("https://backend-tlar.onrender.com/api/clients")
       .then((res) => res.json())
       .then((data) => setClients(data));
   }, []);
@@ -104,7 +104,7 @@ function AddProject() {
     }
 
     // CHECK UNIQUE PROJECT NAME
-    const resExisting = await fetch("http://localhost:5000/api/projects");
+    const resExisting = await fetch("https://backend-tlar.onrender.com/api/projects");
     const existingProjectsRes = await resExisting.json();
     const existingProjects = existingProjectsRes.data || existingProjectsRes;
 
@@ -127,7 +127,7 @@ function AddProject() {
     };
 
     if (editData?._id) {
-      await fetch("http://localhost:5000/api/projects/" + editData._id, {
+      await fetch("https://backend-tlar.onrender.com/api/projects/" + editData._id, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
@@ -141,7 +141,7 @@ function AddProject() {
       if (form.advanceAmount) {
         payload.advanceAmount = Number(form.advanceAmount) || 0;
       }
-      await fetch("http://localhost:5000/api/projects", {
+      await fetch("https://backend-tlar.onrender.com/api/projects", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),

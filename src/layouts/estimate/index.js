@@ -36,7 +36,7 @@ import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import Footer from "examples/Footer";
 import DataTable from "examples/Tables/DataTable";
 
-const API = "http://localhost:5000/api/estimate";
+const API = "https://backend-tlar.onrender.com/api/estimate";
 
 export default function EstimatePage() {
   // GET LOGGED IN USER DATA

@@ -56,7 +56,7 @@ export default function useClientTableData() {
   const loadData = useCallback(async () => {
     try {
       const res = await fetch(
-        "http://localhost:5000/api/clients",
+        "https://backend-tlar.onrender.com/api/clients",
       );
       const data = await res.json();
       setClients(data);
@@ -75,7 +75,7 @@ export default function useClientTableData() {
     if (!clientToUpdate) return;
 
     await fetch(
-      `http://localhost:5000/api/clients/${id}`,
+      `https://backend-tlar.onrender.com/api/clients/${id}`,
       {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
@@ -88,7 +88,7 @@ export default function useClientTableData() {
   const deleteClient = async (id) => {
     try {
       await fetch(
-        `http://localhost:5000/api/clients/${id}`,
+        `https://backend-tlar.onrender.com/api/clients/${id}`,
         {
           method: "DELETE",
         },
