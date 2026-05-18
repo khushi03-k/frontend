@@ -71,16 +71,16 @@ function Dashboard() {
   const [counts, setCounts] = useState({ clients: 0, projects: 0, invoices: 0, vendors: 0 });
 
   useEffect(() => {
-    fetch("https://backend-tlar.onrender.com/api/clients")
+    fetch("https://backend-1-vxvg.onrender.com/api/clients")
       .then(r => r.json()).then(d => setCounts(p => ({ ...p, clients: d.length }))).catch(() => { });
 
-    fetch("https://backend-tlar.onrender.com/api/projects")
+    fetch("https://backend-1-vxvg.onrender.com/api/projects")
       .then(r => r.json()).then(d => setCounts(p => ({ ...p, projects: d.length }))).catch(() => { });
 
-    fetch("https://backend-tlar.onrender.com/api/invoices")
+    fetch("https://backend-1-vxvg.onrender.com/api/invoices")
       .then(r => r.json()).then(d => setCounts(p => ({ ...p, invoices: d.length || d.data?.length || 0 }))).catch(() => { });
 
-    fetch("https://backend-tlar.onrender.com/api/vendors")
+    fetch("https://backend-1-vxvg.onrender.com/api/vendors")
       .then(r => r.json()).then(d => setCounts(p => ({ ...p, vendors: d.length || d.data?.length || 0 }))).catch(() => { });
   }, []);
 
